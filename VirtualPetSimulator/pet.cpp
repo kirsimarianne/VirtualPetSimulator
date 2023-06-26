@@ -11,3 +11,15 @@ void feed_pet(Pet& pet)
         ++pet.fullness;
     }
 }
+
+void play(Pet& pet)
+{
+    if(pet.happiness < MAX)
+    {
+        ++pet.happiness;
+    }
+    if(pet.energy > MIN)
+    {
+        --pet.energy;
+    }
+}
