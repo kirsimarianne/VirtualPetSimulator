@@ -23,3 +23,11 @@ void play(Pet& pet)
         --pet.energy;
     }
 }
+
+void sleep(Pet& pet)
+{
+    if(pet.energy < MAX)
+    {
+        ++pet.energy;
+    }
+}
