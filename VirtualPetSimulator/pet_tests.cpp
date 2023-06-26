@@ -52,7 +52,7 @@ TEST_CASE("Feed pet")
         CHECK(leevi.happiness == 10);
         CHECK(leevi.fullness == 10);
         CHECK(leevi.energy == 10);
-    }  
+    }
 }
 
 TEST_CASE("Play")
@@ -86,8 +86,6 @@ TEST_CASE("Play")
         CHECK(bob.fullness == 0);
         CHECK(bob.energy == 0);
     }
-
-    
 }
 
 TEST_CASE("Sleep")
@@ -103,11 +101,11 @@ TEST_CASE("Sleep")
     }
     // add one sleep because energy is 9 from previous test
     sleep(leevi);
-        CHECK(leevi.name == "Leevi");
-        CHECK(leevi.type == 4);
-        CHECK(leevi.happiness == 10);
-        CHECK(leevi.fullness == 10);
-        CHECK(leevi.energy == 10);
+    CHECK(leevi.name == "Leevi");
+    CHECK(leevi.type == 4);
+    CHECK(leevi.happiness == 10);
+    CHECK(leevi.fullness == 10);
+    CHECK(leevi.energy == 10);
 
     SUBCASE("Test: maximum")
     {
@@ -117,7 +115,7 @@ TEST_CASE("Sleep")
         CHECK(leevi.happiness == 10);
         CHECK(leevi.fullness == 10);
         CHECK(leevi.energy == 10);
-    }   
+    }
 }
 
 TEST_CASE("Display")
@@ -126,13 +124,30 @@ TEST_CASE("Display")
     {
         CHECK(display_happiness(rex) == 7);
     }
-     SUBCASE("fullness")
+    SUBCASE("fullness")
     {
         CHECK(display_fullness(rex) == 6);
     }
-     SUBCASE("energy")
+    SUBCASE("energy")
     {
         CHECK(display_energy(rex) == 5);
     }
-    
+}
+
+TEST_CASE("Out and in file")
+{
+
+    SUBCASE("Save state to file")
+    {
+        CHECK(save_state(rex) == true);
+    }
+    SUBCASE("get state from file")
+    {
+        std::vector<int> state_vect {};
+        bool state_input = get_state(rex, state_vect);
+        CHECK(state_input == true);
+        CHECK(state_vect[0] == display_happiness(rex));
+        CHECK(state_vect[1] == display_fullness(rex));
+        CHECK(state_vect[2] == display_energy(rex));
+    }
 }
