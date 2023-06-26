@@ -2,6 +2,8 @@
 #include "doctest.h"
 #include "pet.h"
 
+// Unit tests for pet.cpp
+
 // Initialize with base values
 Pet rex{};
 // Initialize with new values
@@ -136,14 +138,13 @@ TEST_CASE("Display")
 
 TEST_CASE("Out and in file")
 {
-
     SUBCASE("Save state to file")
     {
         CHECK(save_state(rex) == true);
     }
     SUBCASE("get state from file")
     {
-        std::vector<int> state_vect {};
+        std::vector<int> state_vect{};
         bool state_input = get_state(rex, state_vect);
         CHECK(state_input == true);
         CHECK(state_vect[0] == display_happiness(rex));
