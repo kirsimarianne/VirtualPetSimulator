@@ -117,7 +117,22 @@ TEST_CASE("Sleep")
         CHECK(leevi.happiness == 10);
         CHECK(leevi.fullness == 10);
         CHECK(leevi.energy == 10);
+    }   
+}
 
+TEST_CASE("Display")
+{
+    SUBCASE("happiness")
+    {
+        CHECK(display_happiness(rex) == 7);
+    }
+     SUBCASE("fullness")
+    {
+        CHECK(display_fullness(rex) == 6);
+    }
+     SUBCASE("energy")
+    {
+        CHECK(display_energy(rex) == 5);
     }
     
 }
