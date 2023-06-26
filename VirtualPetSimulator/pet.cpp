@@ -31,3 +31,18 @@ void sleep(Pet& pet)
         ++pet.energy;
     }
 }
+
+int display_happiness(Pet& pet)
+{
+    return pet.happiness;
+}
+
+int display_fullness(Pet& pet)
+{
+    return pet.fullness;
+}
+
+int display_energy(Pet& pet)
+{
+    return pet.energy;
+}

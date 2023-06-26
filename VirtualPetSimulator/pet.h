@@ -24,4 +24,8 @@ void feed_pet(Pet &pet);
 void play(Pet &pet);
 void sleep(Pet& pet);
 
+int display_happiness(Pet& pet);
+int display_fullness(Pet& pet);
+int display_energy(Pet& pet);
+
 #endif
