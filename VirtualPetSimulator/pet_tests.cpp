@@ -57,7 +57,7 @@ TEST_CASE("Feed pet")
 
 TEST_CASE("Play")
 {
-    SUBCASE("Test: happiness and fullness increases")
+    SUBCASE("Test: happiness increases, energy decreases")
     {
         play(rex);
         CHECK(rex.name == "Rex");
@@ -87,5 +87,37 @@ TEST_CASE("Play")
         CHECK(bob.energy == 0);
     }
 
+    
+}
+
+TEST_CASE("Sleep")
+{
+    SUBCASE("Test: energy increases")
+    {
+        sleep(rex);
+        CHECK(rex.name == "Rex");
+        CHECK(rex.type == 1);
+        CHECK(rex.happiness == 7);
+        CHECK(rex.fullness == 6);
+        CHECK(rex.energy == 5);
+    }
+    // add one sleep because energy is 9 from previous test
+    sleep(leevi);
+        CHECK(leevi.name == "Leevi");
+        CHECK(leevi.type == 4);
+        CHECK(leevi.happiness == 10);
+        CHECK(leevi.fullness == 10);
+        CHECK(leevi.energy == 10);
+
+    SUBCASE("Test: maximum")
+    {
+        sleep(leevi);
+        CHECK(leevi.name == "Leevi");
+        CHECK(leevi.type == 4);
+        CHECK(leevi.happiness == 10);
+        CHECK(leevi.fullness == 10);
+        CHECK(leevi.energy == 10);
+
+    }
     
 }

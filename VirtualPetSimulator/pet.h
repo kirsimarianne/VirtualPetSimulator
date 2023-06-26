@@ -22,5 +22,6 @@ struct Pet
 
 void feed_pet(Pet &pet);
 void play(Pet &pet);
+void sleep(Pet& pet);
 
 #endif
