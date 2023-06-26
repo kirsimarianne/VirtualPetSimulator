@@ -1,7 +1,8 @@
 #ifndef PET_H
 #define PET_H
 
-#include <string>
+#include <fstream>
+#include <iostream>
 
 const int MAX = 10;
 const int MIN = 0;
