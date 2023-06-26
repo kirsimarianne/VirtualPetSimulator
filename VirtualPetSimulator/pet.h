@@ -3,6 +3,7 @@
 
 #include <fstream>
 #include <iostream>
+#include <vector>
 
 const int MAX = 10;
 const int MIN = 0;
@@ -28,5 +29,8 @@ void sleep(Pet& pet);
 int display_happiness(Pet& pet);
 int display_fullness(Pet& pet);
 int display_energy(Pet& pet);
+
+bool save_state(Pet &pet);
+bool get_state(Pet &pet, std::vector<int> &state_vect);
 
 #endif
